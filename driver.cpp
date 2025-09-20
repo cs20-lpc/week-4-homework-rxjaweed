@@ -5,6 +5,7 @@
 // TO DO:
 // If you want to use the LinkedList code you wrote in Week 4 Mon Lab for creating list
 // include LinkedList.hpp here and also add it both LinkedList.hpp and LinkedList.tpp to this repository.
+//program is crashing when GPA is a decimal, even though I have it as a double
 
 
 using namespace std;
@@ -32,7 +33,7 @@ int main()
         if (option == 1) //add student
         {
             string name;
-            int GPA;
+            double GPA;
             int ID;
 
             
@@ -80,17 +81,29 @@ int main()
             cout << "The list currently has " << list.NumberofStudents() << endl;
         }
 
-        /*if (option == 6) // Add course to a student
+        if (option == 6) // Add course to a student
         {
-            cout << "The list currently has " << list.NumberofStudents() << endl;
-        }*/
-    } 
+            int ID;
+            string course;
+            string courseLoc;
+
+            cout << "Enter student ID for course being added: " << endl;
+            cin >> ID;
+            cin.ignore(); // clear leftover newline from ID input
+
+            cout << "Enter name of the course: " << endl;
+            getline(cin, course);
+
+            cout << "Enter course location: " << endl;
+            getline(cin, courseLoc);
+
+            list.AddCourse(course, ID, courseLoc);
+        }
+
+    } while (option != -1);
     
-    
-    while (option != -1);
-    {
         cout << "Thank you for using the Program" << endl;
-    }
+    
     
 
     

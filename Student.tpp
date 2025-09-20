@@ -13,7 +13,7 @@ LinkedList::~LinkedList() {
     clear();
 }
 
-void LinkedList::AddStudent(const string& name, int ID, int GPA) 
+void LinkedList::AddStudent(const string& name, int ID, double GPA) 
 {
     Node *newNode = new Node;
 
@@ -37,7 +37,6 @@ void LinkedList::AddStudent(const string& name, int ID, int GPA)
         nodePtr->next = newNode;
     }
     ++length;
-
 }
 
 void LinkedList::Search(int ID) 
@@ -146,6 +145,33 @@ void LinkedList::clear()
     }
     head = nullptr;
     length = 0;
+}
+
+void LinkedList :: AddCourse(string course, int ID, string courseLoc)
+{
+    
+
+    
+    Node* nodePtr = head;
+    //newNode->ID = ID;
+    //newNode->course = course;
+    //newNode->courseLoc = courseLoc;
+
+    
+    //newNode->next = nullptr;
+
+    while (nodePtr != nullptr)
+    {
+        
+        if (nodePtr->ID == ID)
+        {
+            nodePtr->course = course;
+            nodePtr->courseLoc = courseLoc;
+            return;
+        }
+        nodePtr = nodePtr->next;
+    }
+
 }
 
 

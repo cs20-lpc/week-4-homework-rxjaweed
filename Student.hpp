@@ -16,8 +16,10 @@ class LinkedList {
         {
             string name;
             Node* next;
-            int GPA;
+            double GPA;
             int ID;
+            string course;
+            string courseLoc;
             
             
 
@@ -37,7 +39,7 @@ class LinkedList {
         virtual ~LinkedList();
 
         // add the argument to the end of the list
-        virtual void AddStudent(const string&, int, int);
+        virtual void AddStudent(const string&, int, double);
 
         // remove all elements in the list, resetting to the initial state
         virtual void Search(int);
@@ -54,6 +56,9 @@ class LinkedList {
 
         // remove all elements in the list, resetting to the initial state virtual void clear() override;
         virtual void clear();
+
+        //this function will allow a course to be added to a student's profile, basically adding something to the node. You need to know ID to add
+        virtual void AddCourse(string, int, string);
 
         // overloaded stream insertion operator to make printing easier
         template <typename U>
